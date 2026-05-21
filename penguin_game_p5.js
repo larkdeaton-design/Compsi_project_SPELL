@@ -763,7 +763,7 @@ function common_room() {
     image(penguin[8], 0, 0, 250, 250);
     pop();
     fill(0);
-    textAlign(CENTER, CENTER);
+    textAlign(LEFT, TOP);
     text("Hi there! I see you have decided \n to attend S.P.E.L.L. I hope you \n enjoy your first year here.", 230, 485);
   }
   if (common_scene === 1) {
