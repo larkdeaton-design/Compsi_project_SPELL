@@ -808,7 +808,7 @@ function graduation_ending() {
   image(stage_img, 0, 0);
 
   if (gpx >= 480 && timergp < 20) {
-    push(); imageMode(CENTER);
+    push(); 
     image(blue_penguin_img, 500, 650, 130, 185);
     image(grad_cap, 495, 640, 135, 45);
     image(speech_bubble, 280, 380);
@@ -834,14 +834,14 @@ function graduation_ending() {
       if (castle_zoom > 1.0) castle_zoom -= 0.05;
       if (castle_zoom <= 1.0 && !the_end) {
         tint(0);
-        push(); imageMode(CENTER);
+        push(); 
         image(evil_pengu[counte], 1100, 580, 400, 400);
         pop();
         noTint();
         if (counte >= 9) {
           if (countl < lightning_imgs.length) {
             // if (thunder_sound && !thunder_sound.isPlaying()) thunder_sound.play();
-            push(); imageMode(CENTER);
+            push(); 
             image(lightning_imgs[countl], 200, -100, 700, 1000);
             pop();
             countl++;
@@ -866,14 +866,14 @@ function graduation_ending() {
       rect(-100, -100, 2000, 2000);
     }
   } else {
-    push(); imageMode(CENTER);
+    push(); 
     image(grad_pengu[countgrad], gpx, 650, 200, 200);
     image(grad_cap, gpx + 30, 640, 125, 50);
     pop();
     countgrad = (countgrad + 1) % grad_pengu.length;
     gpx += 15;
     if (timergp >= 20) {
-      push(); imageMode(CENTER);
+      push(); 
       image(diploma_scroll_img, gpx + 40, 730, 100, 100);
       pop();
     }
@@ -889,13 +889,13 @@ function minigame1() {
   // if (!game1_music.isPlaying()) game1_music.loop();
   imageMode(CORNER);
   image(stone, 0, 0);
-  push(); imageMode(CENTER);
+  push(); 
   image(pengu_fly[g1], px1, py1, 200, 200);
   pop();
 
-  if (die_cnt1 < 1) { push(); imageMode(CENTER); image(heart_img, 1320,  50, 100, 100); pop(); }
-  if (die_cnt1 < 2) { push(); imageMode(CENTER); image(heart_img, 1210,  50, 100, 100); pop(); }
-  if (die_cnt1 < 3) { push(); imageMode(CENTER); image(heart_img, 1100,  50, 100, 100); pop(); }
+  if (die_cnt1 < 1) { push();  image(heart_img, 1320,  50, 100, 100); pop(); }
+  if (die_cnt1 < 2) { push();  image(heart_img, 1210,  50, 100, 100); pop(); }
+  if (die_cnt1 < 3) { push();  image(heart_img, 1100,  50, 100, 100); pop(); }
 
   fill(255); textSize(30);
   text("SCORE: " + dodgecnt, 850, 75);
@@ -923,7 +923,7 @@ function minigame1() {
     for (let i = 0; i < currobject.length; i++) {
       if (currobject[i]) {
         objectX[i] -= objectspeed;
-        push(); imageMode(CENTER);
+        push(); 
         image(object_imgs[objecttype[i]], objectX[i], objectY[i], 200, 200);
         pop();
         if (objectX[i] < -200) {
@@ -993,7 +993,7 @@ function minigame_2() {
     }
     for (let i = 0; i < 9; i++) {
       let sz = tile_placed[i] ? 250 : 150;
-      push(); imageMode(CENTER);
+      push(); 
       image(penguin_puzzle[i], tile_x_pos[i] - 75, tile_y_pos[i] - 75, sz, sz);
       pop();
     }
@@ -1014,7 +1014,7 @@ function minigame_2() {
       translate(800, 100);
       scale(-1, 1);
       translate(-800, -100);
-      push(); imageMode(CENTER); image(speech_bubble, 800, 100); pop();
+      push();  image(speech_bubble, 800, 100); pop();
       pop();
     };
 
@@ -1029,11 +1029,11 @@ function minigame_2() {
       flipBubble();
       textSize(12);
       fill(0);
-      textAlign(CENTER, CENTER);
+      textAlign(LEFT, TOP);
       text(divTexts[div_scene] || "", 550, 270);
     }
     if (div_scene >= 5) {
-      fill(255); textSize(40); textAlign(CENTER, CENTER);
+      fill(255); textSize(40); textAlign(LEFT, TOP);
       text("DIVINATION EXAMS: PASSED", 900, 120);
       fill(100); stroke(255);
       rect(1050, 165, 200, 70, 5);
@@ -1055,7 +1055,7 @@ function minigame_3() {
   image(wood, 0, 0);
 
   // Hearts
-  push(); imageMode(CENTER);
+  push(); 
   if (wrong_clicks < 1) image(heart_img, 1320, 50, 100, 100);
   if (wrong_clicks < 2) image(heart_img, 1210, 50, 100, 100);
   if (wrong_clicks < 3) image(heart_img, 1100, 50, 100, 100);
@@ -1064,7 +1064,7 @@ function minigame_3() {
   pop();
 
   if (!game_over3 && !win_3) {
-    push(); imageMode(CENTER);
+    push(); 
     image(penguin_concentrate, c_penguin_x, c_penguin_y, 200, 200);
     pop();
     circle_start -= circle_shrink;
