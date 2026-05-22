@@ -44,7 +44,7 @@
 // ── Global state ──────────────────────────────────────────────
 let stone, wood;          // p5.Graphics backgrounds
 let move_flag = false;    // renamed from `move` to avoid conflict
-let total_wins = 0;
+let total_wins = 6;
 
 let castle;
 let start_game = false;
@@ -510,11 +510,13 @@ function intro_sequence() {
     text("Press space to continue.", 200, 800);
   }
   if (scene === 2) {
+    push(); imageMode(CENTER);
     background(0);
     fill(255);
     textAlign(CENTER, CENTER);
     textSize(40);
     text("However, one day, a letter arrived...", 735, 450);
+    pop();
   }
   if (scene === 3) {
     push(); imageMode(CENTER);
@@ -541,7 +543,9 @@ function intro_sequence() {
     image(blue_penguin_img, 450, 720);
     image(letter_img, 520, 750, 72.5, 60);
     image(thought_bubble, 270, 550, 300, 200);
-    fill(255);
+    fill(0);
+    textSize(11);
+    textAlign(CENTER, CENTER);
     text("Oh wow! \n I can't belive that I'm a wizard! \n I definitely want to go to S.P.E.L.L.! \n I guess I go should buy my stuff quickly!", 270, 535);
     pop();
   }
@@ -744,7 +748,7 @@ function common_room() {
   noStroke();
   rect(20, 20, 120, 40, 5);
   fill(255);
-  textSize(18);
+  textSize(16);
   textAlign(LEFT, BASELINE);
   text("RETURN", 49, 47);
 
@@ -774,7 +778,7 @@ function common_room() {
     image(penguin[8], 1010, 720, 250, 250);
     pop();
     fill(0);
-    textAlign(CENTER, CENTER);
+    textAlign(LEFT, TOP);
     text("Hiya! Pssst- I know you just arrived, \n but this may be our last year here- \n apparently the Dark Emperor is going \n to infiltrate our school. Enjoy the time \n while you can! SEE YOU LATER!!", 965, 500);
   }
   if (common_scene === 2) {
@@ -791,7 +795,7 @@ function common_room() {
     image(penguin[8], 0, 0, 250, 250);
     pop();
     fill(0);
-    textAlign(CENTER, CENTER);
+    textAlign(LEFT, TOP);
     text("Nice to see you again! We \n should meet up sometime this \n year!", 635, 495);
   }
 }
@@ -813,7 +817,7 @@ function graduation_ending() {
     image(grad_cap, 495, 640, 135, 45);
     image(speech_bubble, 280, 380);
     fill(0);
-    textAlign(CENTER, CENTER);
+    textAlign(LEFT, TOP);
     text("I had a really good time attending \n S.P.E.L.L. See everyone next year!", 350, 540);
     image(diploma_scroll_img, 570, 730, 100, 100);
     pop();
