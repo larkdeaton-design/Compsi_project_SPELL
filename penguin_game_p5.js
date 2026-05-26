@@ -44,7 +44,7 @@
 // ── Global state ──────────────────────────────────────────────
 let stone, wood;          // p5.Graphics backgrounds
 let move_flag = false;    // renamed from `move` to avoid conflict
-let total_wins = 6;
+let total_wins = 0;
 
 let castle;
 let start_game = false;
